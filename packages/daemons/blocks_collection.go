@@ -30,6 +30,7 @@ import (
 	"github.com/AplaProject/go-apla/packages/config/syspar"
 	"github.com/AplaProject/go-apla/packages/consts"
 	"github.com/AplaProject/go-apla/packages/converter"
+	"github.com/AplaProject/go-apla/packages/daylight/state"
 	"github.com/AplaProject/go-apla/packages/model"
 	"github.com/AplaProject/go-apla/packages/parser"
 	"github.com/AplaProject/go-apla/packages/utils"
@@ -176,13 +177,15 @@ func getHostBlockID(host string, logger *log.Entry) (int64, error) {
 
 // UpdateChain load from host all blocks from our last block to maxBlockID
 func UpdateChain(ctx context.Context, d *daemon, host string, maxBlockID int64) error {
-
 	// get current block id from our blockchain
 	curBlock := &model.InfoBlock{}
 	if _, err := curBlock.Get(); err != nil {
 		d.logger.WithFields(log.Fields{"type": consts.DBError, "error": err}).Error("Getting info block")
 		return err
 	}
+
+	state.SetMaxDownloadedBlockID(maxBlockID)
+	defer state.SetMaxDownloadedBlockID(0)
 
 	for blockID := curBlock.BlockID + 1; blockID <= maxBlockID; blockID++ {
 		if ctx.Err() != nil {

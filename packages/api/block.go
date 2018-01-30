@@ -5,16 +5,19 @@ import (
 
 	"github.com/AplaProject/go-apla/packages/consts"
 	"github.com/AplaProject/go-apla/packages/converter"
+	"github.com/AplaProject/go-apla/packages/daylight/state"
 	"github.com/AplaProject/go-apla/packages/model"
 
 	log "github.com/sirupsen/logrus"
 )
 
+const paramBlockID = "block_id"
+
 type GetMaxBlockIDResult struct {
 	MaxBlockID int64 `json:"max_block_id"`
 }
 
-func getMaxBlockID(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
+func maxBlockID(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
 	block := &model.Block{}
 	found, err := block.GetMaxBlock()
 	if err != nil {
@@ -25,7 +28,14 @@ func getMaxBlockID(w http.ResponseWriter, r *http.Request, data *apiData, logger
 		log.WithFields(log.Fields{"type": consts.NotFound}).Error("last block not found")
 		return errorAPI(w, `E_NOTFOUND`, http.StatusNotFound)
 	}
-	data.result = &GetMaxBlockIDResult{block.ID}
+
+	data.params[paramBlockID] = block.ID
+
+	return nil
+}
+
+func getMaxBlockID(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
+	data.result = &GetMaxBlockIDResult{data.ParamInt64(paramBlockID)}
 	return nil
 }
 
@@ -51,5 +61,18 @@ func getBlockInfo(w http.ResponseWriter, r *http.Request, data *apiData, logger 
 		return errorAPI(w, `E_NOTFOUND`, http.StatusNotFound)
 	}
 	data.result = &GetBlockInfoResult{Hash: block.Hash, EcosystemID: block.EcosystemID, KeyID: block.KeyID, Time: block.Time, Tx: block.Tx, RollbacksHash: block.RollbacksHash}
+	return nil
+}
+
+type ProgressDownloadedBlock struct {
+	MaxBlockID           int64 `json:"max_block_id"`
+	MaxDownloadedBlockID int64 `json:"max_downloaded_block_id"`
+}
+
+func getProgressDownloadedBlock(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
+	data.result = &ProgressDownloadedBlock{
+		MaxBlockID:           data.ParamInt64(paramBlockID),
+		MaxDownloadedBlockID: state.GetMaxDownloadedBlockID(),
+	}
 	return nil
 }
