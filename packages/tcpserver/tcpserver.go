@@ -23,7 +23,6 @@ import (
 	"time"
 
 	"github.com/AplaProject/go-apla/packages/conf"
-
 	"github.com/AplaProject/go-apla/packages/consts"
 	"github.com/AplaProject/go-apla/packages/service"
 
