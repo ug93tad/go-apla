@@ -28,7 +28,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/consts"
 	"github.com/AplaProject/go-apla/packages/crypto"
 	"github.com/stretchr/testify/assert"
 )
