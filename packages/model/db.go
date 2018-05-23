@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GenesisKernel/go-genesis/packages/conf"
-	"github.com/GenesisKernel/go-genesis/packages/consts"
-	"github.com/GenesisKernel/go-genesis/packages/crypto"
-	"github.com/GenesisKernel/go-genesis/packages/migration"
-	"github.com/GenesisKernel/go-genesis/packages/migration/vde"
+	"github.com/AplaProject/go-apla/packages/conf"
+	"github.com/AplaProject/go-apla/packages/consts"
+	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/AplaProject/go-apla/packages/migration"
+	"github.com/AplaProject/go-apla/packages/migration/vde"
 
 	"github.com/jinzhu/gorm"
 	log "github.com/sirupsen/logrus"
