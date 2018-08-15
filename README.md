@@ -195,7 +195,7 @@ $ sudo apt install -y python3-pip
 
 2) Download and install required python packages:
 ```
-$ sudo wget https://raw.githubusercontent.com/GenesisKernel/genesis-tests/master/requirements.txt && sudo pip3 install -r requirements.txt
+$ sudo wget https://raw.githubusercontent.com/AplaProject/apla-tests/master/requirements.txt && sudo pip3 install -r requirements.txt
 ```
 
 #### OS Firewall Requirements
@@ -267,7 +267,7 @@ Where:
 - --centUrl=ht&#8203;tp://10.10.99.1:8000 - used IP address and port of Centrifugo of Node 1
 - --httpHost=10.10.99.1 - used IP address and port of API-server of Node 1
 - --tcpHost=10.10.99.1 - used IP address and port of TCP-server of Node 1
-- Other usage and flags of go-apla are described in [documentation](http://genesiskernel.readthedocs.io/en/latest/)
+- Other usage and flags of go-apla are described in [documentation](http://apla.readthedocs.io/en/latest/)
 
 4) Generate Node 1 keys:
 ```
@@ -344,7 +344,7 @@ Where:
 - --httpHost=10.10.99.2 - used IP address and port of API-server of Node 2
 - --tcpHost=10.10.99.2 - used IP address and port of TCP-server of Node 2
 - --nodesAddr=10.10.99.1 - IP-address of Node 1
-- Other usage and flags of go-apla are described in [documentation](http://genesiskernel.readthedocs.io/en/latest/)
+- Other usage and flags of go-apla are described in [documentation](http://apla.readthedocs.io/en/latest/)
 
 3) Generate Node 2 keys:
 ```
@@ -366,7 +366,7 @@ You should ignore showed errors. If you start node with log level "INFO", you'll
 
 Errors that occurred above are caused by untrusted relationships between nodes. To fix it, you should add the second node public key to the first node.
 
-To adding keys you should download this script [updateKeys.py](https://github.com/GenesisKernel/genesis-tests/blob/master/scripts/updateKeys.py). All information that you are need to script execution are located in node's directory 'nodeN'. This scipt must be executed on the first node with founder's privileges. Execute script with next arguments:
+To adding keys you should download this script [updateKeys.py](https://github.com/aplaproject/apla-tests/blob/master/scripts/updateKeys.py). All information that you are need to script execution are located in node's directory 'nodeN'. This scipt must be executed on the first node with founder's privileges. Execute script with next arguments:
 ```
 $ python3 updateKeys.py PrivateKey1 Host1 Port1 KeyID2 PublicKey2 balance
 ```
@@ -389,7 +389,7 @@ This script will create contract, which add the second node public key to the ta
 
 #### Create connection between nodes
 
-Next, you should create connection between nodes. For this, you should download this script [newValToFullNodes.py](https://github.com/GenesisKernel/genesis-tests/blob/master/scripts/newValToFullNodes.py). All information that you are need to script execution are located in node's directory 'nodeN'. This scipt must be executed on the first node with founder's privileges.
+Next, you should create connection between nodes. For this, you should download this script [newValToFullNodes.py](https://github.com/aplaproject/apla-tests/blob/master/scripts/newValToFullNodes.py). All information that you are need to script execution are located in node's directory 'nodeN'. This scipt must be executed on the first node with founder's privileges.
 
 Execute script with next arguments:
 ```
@@ -498,7 +498,7 @@ Leave the other settings by default.
 
 3) During installation process, select “Add python.exe to Path” in features tree. Leave the other settings by default.
 
-4) Download python packages list "requirements.txt" from [GitHub](https://raw.githubusercontent.com/GenesisKernel/genesis-tests/master/requirements.txt).
+4) Download python packages list "requirements.txt" from [GitHub](https://raw.githubusercontent.com/aplaproject/apla-tests/master/requirements.txt).
 
 5) For script execution install additional packages via "requirements.txt":
 ```
@@ -557,7 +557,7 @@ You can set your own "secret", but also you must change it in node configuration
 
 After that, ‘go-apla.exe’ file will appear in ‘go-apla’ directory.
 
-Usage and flags of ‘go-apla.exe’ file are described in [documentation](http://genesiskernel.readthedocs.io/en/latest/).
+Usage and flags of ‘go-apla.exe’ file are described in [documentation](http://apla.readthedocs.io/en/latest/).
 
 3) Create Node 1 ‘config.toml’ configuration file, all used network settings (IP-adresses and ports) are described in [Overview](#overview):
 ```
@@ -570,7 +570,7 @@ Where:
 - --centUrl=ht&#8203;tp://10.10.99.1:8000 - used IP address and port of Centrifugo of Node 1
 - --httpHost=10.10.99.1 - used IP address and port of API-server of Node 1
 - --tcpHost=10.10.99.1 - used IP address and port of TCP-server of Node 1
-- Other usage and flags of go-apla are described in [documentation](http://genesiskernel.readthedocs.io/en/latest/)
+- Other usage and flags of go-apla are described in [documentation](http://apla.readthedocs.io/en/latest/)
 
 4) Generate Node 1 keys:
 ```
@@ -645,7 +645,7 @@ Where:
 - --httpHost=10.10.99.2 - used IP address and port of API-server of Node 2
 - --tcpHost=10.10.99.2 - used IP address and port of TCP-server of Node 2
 - --nodesAddr=10.10.99.1 - IP-address of Node 1
-- Other usage and flags of go-apla are described in [documentation](http://genesiskernel.readthedocs.io/en/latest/)
+- Other usage and flags of go-apla are described in [documentation](http://apla.readthedocs.io/en/latest/)
 
 3) Generate Node 2 keys:
 ```
@@ -669,7 +669,7 @@ You should ignore showed errors. If you start node with log level "INFO", you'll
 
 Errors that occurred above are caused by untrusted relationships between nodes. To fix it, you should add the second node public key to the first node.
 
-To adding keys you should download this script [updateKeys.py](https://github.com/GenesisKernel/genesis-tests/blob/master/scripts/updateKeys.py). All information that you are need to script execution are located in node's directory 'node'. This script must be executed on the first node with founder's privileges. Execute script with next arguments:
+To adding keys you should download this script [updateKeys.py](https://github.com/aplaproject/apla-tests/blob/master/scripts/updateKeys.py). All information that you are need to script execution are located in node's directory 'node'. This script must be executed on the first node with founder's privileges. Execute script with next arguments:
 ```
 > py updateKeys.py PrivateKey1 Host1 Port1 KeyID2 PublicKey2 balance
 ```
@@ -692,7 +692,7 @@ This script will create contract, which add the second node public key to the ta
 
 #### Create connection between nodes
 
-Then you need to create a connection between the nodes. For this, you should download this script [newValToFullNodes.py](https://github.com/GenesisKernel/genesis-tests/blob/master/scripts/newValToFullNodes.py). All information that you are need to script execution are located in node's directory. This script must be executed on the first node with founder's privileges. 
+Then you need to create a connection between the nodes. For this, you should download this script [newValToFullNodes.py](https://github.com/aplaproject/apla-tests/blob/master/scripts/newValToFullNodes.py). All information that you are need to script execution are located in node's directory. This script must be executed on the first node with founder's privileges. 
 
 Execute script with next arguments:
 ```
