@@ -12,8 +12,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
 
 	log "github.com/sirupsen/logrus"
 )

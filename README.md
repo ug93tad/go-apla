@@ -1,14 +1,14 @@
-[![Throughput Graph](https://graphs.waffle.io/AplaProject/go-apla/throughput.svg)](https://waffle.io/AplaProject/go-apla/metrics/throughput)
+[![Throughput Graph](https://graphs.waffle.io/ug93tad/go-apla/throughput.svg)](https://waffle.io/ug93tad/go-apla/metrics/throughput)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Go Report Card](https://goreportcard.com/badge/github.com/AplaProject/go-apla)](https://goreportcard.com/report/github.com/AplaProject/go-apla)
-[![Build Status](https://travis-ci.org/AplaProject/go-apla.svg?branch=master)](https://travis-ci.org/AplaProject/go-apla)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ug93tad/go-apla)](https://goreportcard.com/report/github.com/ug93tad/go-apla)
+[![Build Status](https://travis-ci.org/ug93tad/go-apla.svg?branch=master)](https://travis-ci.org/ug93tad/go-apla)
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat)](http://apla.readthedocs.io/en/latest/)
-[![](https://tokei.rs/b1/github/AplaProject/go-apla)](https://github.com/AplaProject/go-apla)
-![](https://reposs.herokuapp.com/?path=AplaProject/go-apla&style=flat)
+[![](https://tokei.rs/b1/github/ug93tad/go-apla)](https://github.com/ug93tad/go-apla)
+![](https://reposs.herokuapp.com/?path=ug93tad/go-apla&style=flat)
 [![API Reference](
 https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f676f6c616e672f6764646f3f7374617475732e737667
-)](https://godoc.org/github.com/AplaProject/go-apla)
+)](https://godoc.org/github.com/ug93tad/go-apla)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-apla?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Slack Status](https://slack.apla.io/badge.svg)](https://slack.apla.io)
 
@@ -195,7 +195,7 @@ $ sudo apt install -y python3-pip
 
 2) Download and install required python packages:
 ```
-$ sudo wget https://raw.githubusercontent.com/AplaProject/apla-tests/master/requirements.txt && sudo pip3 install -r requirements.txt
+$ sudo wget https://raw.githubusercontent.com/ug93tad/apla-tests/master/requirements.txt && sudo pip3 install -r requirements.txt
 ```
 
 #### OS Firewall Requirements
@@ -250,9 +250,9 @@ You can set your own "secret", but also you must change it in node configuration
 ```
 $ mkdir go-apla && cd go-apla && mkdir node1
 ```
-2) Download and buid latest release of Go-Apla from [GitHub](https://github.com/AplaProject/go-apla/releases) and copy it into go-apla directory:
+2) Download and buid latest release of Go-Apla from [GitHub](https://github.com/ug93tad/go-apla/releases) and copy it into go-apla directory:
 ```
-$ go get -v github.com/AplaProject /go-apla && cd /opt/apla && mv bin/go-apla go-apla/ && rm -rf bin/ && rm -rf src/
+$ go get -v github.com/ug93tad /go-apla && cd /opt/apla && mv bin/go-apla go-apla/ && rm -rf bin/ && rm -rf src/
 ```
 
 
@@ -548,11 +548,11 @@ You can set your own "secret", but also you must change it in node configuration
 
 1) In Apla directory, create go-apla directory and node folder inside it.
 
-2) Download Go-Apla from [GitHub](https://github.com/AplaProject/go-apla/releases) or build latest release by command line:
+2) Download Go-Apla from [GitHub](https://github.com/ug93tad/go-apla/releases) or build latest release by command line:
 ```
 > cd C:\Apla\go-apla
-> go get –v github.com/AplaProject/go-apla
-> go build github.com/AplaProject/go-apla
+> go get –v github.com/ug93tad/go-apla
+> go build github.com/ug93tad/go-apla
 ```
 
 After that, ‘go-apla.exe’ file will appear in ‘go-apla’ directory.
@@ -799,9 +799,9 @@ $ sudo dpkg -i yarn_1.7.0_all.deb && rm yarn_1.7.0_all.deb
 
 ### Build Molis App <a name="build-molis-app-deb"></a>
 
-1) Download latest release of Apla-Front (Molis) from [GitHub](https://github.com/AplaProject/apla-front) via git:
+1) Download latest release of Apla-Front (Molis) from [GitHub](https://github.com/ug93tad/apla-front) via git:
 ```
-$ git clone https://github.com/AplaProject/apla-front.git
+$ git clone https://github.com/ug93tad/apla-front.git
 ```
 
 2) Install Apla-Front dependencies via Yarn:
@@ -880,9 +880,9 @@ After this, your Molis Web App will be accessed at: http://localhost:5000
 
 ### Build Molis App <a name="build-molis-app-win"></a>
 
-1) Download latest release of Apla-Front (Molis) from [GitHub](https://github.com/AplaProject/apla-front) via git:
+1) Download latest release of Apla-Front (Molis) from [GitHub](https://github.com/ug93tad/apla-front) via git:
 ```
-> git clone https://github.com/AplaProject/apla-front.git
+> git clone https://github.com/ug93tad/apla-front.git
 ```
 
 2) Install Apla-Front dependencies via Yarn:

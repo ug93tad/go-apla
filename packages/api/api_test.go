@@ -33,9 +33,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
 )
 
 const apiAddress = "http://localhost:7079"

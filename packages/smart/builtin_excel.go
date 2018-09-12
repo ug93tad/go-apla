@@ -3,10 +3,10 @@ package smart
 import (
 	"bytes"
 
-	"github.com/AplaProject/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/converter"
 
 	xl "github.com/360EntSecGroup-Skylar/excelize"
-	"github.com/AplaProject/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/model"
 	log "github.com/sirupsen/logrus"
 )
 

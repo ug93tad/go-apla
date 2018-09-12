@@ -3,11 +3,11 @@ package custom
 import (
 	"errors"
 
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/service"
-	"github.com/AplaProject/go-apla/packages/utils"
-	"github.com/AplaProject/go-apla/packages/utils/tx"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/service"
+	"github.com/ug93tad/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/utils/tx"
 
 	log "github.com/sirupsen/logrus"
 )

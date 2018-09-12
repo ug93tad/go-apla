@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/utils"
 )
 
 type MultiRequest struct {

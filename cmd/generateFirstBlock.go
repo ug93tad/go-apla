@@ -9,11 +9,11 @@ import (
 
 	"path/filepath"
 
-	"github.com/AplaProject/go-apla/packages/block"
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/block"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/utils"
 	log "github.com/sirupsen/logrus"
 )
 

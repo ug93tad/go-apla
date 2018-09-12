@@ -23,11 +23,11 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/script"
-	"github.com/AplaProject/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/script"
+	"github.com/ug93tad/go-apla/packages/smart"
 
 	log "github.com/sirupsen/logrus"
 )

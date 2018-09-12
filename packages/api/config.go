@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/publisher"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/publisher"
 	log "github.com/sirupsen/logrus"
 )
 

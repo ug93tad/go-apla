@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 	"hash"
 
-	"github.com/AplaProject/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/consts"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/sha3"
 )

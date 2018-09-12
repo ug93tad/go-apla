@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/model/querycost"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/model/querycost"
 
 	log "github.com/sirupsen/logrus"
 )

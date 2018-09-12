@@ -2,7 +2,7 @@
 
 package utils
 
-import "github.com/AplaProject/go-apla/packages/model"
+import "github.com/ug93tad/go-apla/packages/model"
 
 type intervalBlocksCounter interface {
 	count(state blockGenerationState) (int, error)

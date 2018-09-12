@@ -19,11 +19,11 @@ package daemons
 import (
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/daylight/system"
+	"github.com/ug93tad/go-apla/packages/daylight/system"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/utils"
 
 	log "github.com/sirupsen/logrus"
 )

@@ -24,7 +24,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/AplaProject/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/converter"
 )
 
 func TestLimit(t *testing.T) {

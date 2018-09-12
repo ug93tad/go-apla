@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AplaProject/go-apla/tools/desync_monitor/config"
-	"github.com/AplaProject/go-apla/tools/desync_monitor/query"
+	"github.com/ug93tad/go-apla/tools/desync_monitor/config"
+	"github.com/ug93tad/go-apla/tools/desync_monitor/query"
 
 	log "github.com/sirupsen/logrus"
 )

@@ -26,11 +26,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
-	taskContract "github.com/AplaProject/go-apla/packages/scheduler/contract"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
+	taskContract "github.com/ug93tad/go-apla/packages/scheduler/contract"
 )
 
 func TestVDECreate(t *testing.T) {

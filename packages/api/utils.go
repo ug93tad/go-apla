@@ -33,9 +33,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
 )
 
 var apiAddress = "http://172.28.176.227:7079"
@@ -76,7 +76,6 @@ func SetToken(token string) {
 func SetPriv(key string) {
 	gPrivate = key
 }
-
 func sendRawRequest(rtype, url string, form *url.Values) ([]byte, error) {
 	client := &http.Client{}
 	var ioform io.Reader
@@ -117,7 +116,6 @@ func sendRequest(rtype, url string, form *url.Values, v interface{}) error {
 	if err != nil {
 		return err
 	}
-
 	return json.Unmarshal(data, v)
 }
 
@@ -134,6 +132,57 @@ func sendPost(url string, form *url.Values, v interface{}) error {
 }
 func SendPost(url string, form *url.Values, v interface{}) error {
 	return sendRequest("POST", url, form, v)
+}
+
+func KeyLogin(keyFile string, pubKeyFile string, addr string) (err error) {
+  apiAddress = addr
+	var (
+		key, sign []byte
+	)
+
+	key, err = ioutil.ReadFile(keyFile)
+	if err != nil {
+		return
+	}
+	if len(key) > 64 {
+		key = key[:64]
+	}
+	var ret getUIDResult
+	err = sendGet(`getuid`, nil, &ret)
+	if err != nil {
+		return
+	}
+	gAuth = ret.Token
+	if len(ret.UID) == 0 {
+		return fmt.Errorf(`getuid has returned empty uid`)
+	}
+
+	sign, err = crypto.Sign(string(key), nonceSalt+ret.UID)
+	if err != nil {
+		return
+	}
+	pub, err := ioutil.ReadFile(pubKeyFile)//PrivateToPublicHex(string(key))
+	if err != nil {
+		return
+	}
+	form := url.Values{"pubkey": {string(pub)}, "signature": {hex.EncodeToString(sign)},
+		`ecosystem`: {converter.Int64ToStr(1)}}
+	if gMobile {
+		form[`mobile`] = []string{`true`}
+	}
+	var logret loginResult
+	err = sendPost(`login`, &form, &logret)
+	if err != nil {
+		return
+	}
+	gAddress = logret.Address
+	gPrivate = string(key)
+	gPublic, err = PrivateToPublicHex(gPrivate)
+	gAuth = logret.Token
+	if err != nil {
+		return err
+	}
+	return
 }
 
 func keyLogin(state int64) (err error) {
@@ -219,7 +268,7 @@ func appendSign(ret map[string]interface{}, form *url.Values) error {
 }
 
 func waitTx(hash string) (int64, error) {
-	for i := 0; i < 15; i++ {
+	for i := 0; i < 8; i++ {
 		var ret txstatusResult
 		err := sendGet(`txstatus/`+hash, nil, &ret)
 		if err != nil {
@@ -235,7 +284,7 @@ func waitTx(hash string) (int64, error) {
 			}
 			return 0, errors.New(string(errtext))
 		}
-		time.Sleep(time.Second)
+		time.Sleep(4*time.Second)
 	}
 	return 0, fmt.Errorf(`TxStatus timeout`)
 }
@@ -248,11 +297,13 @@ func postTxResult(txname string, form *url.Values) (id int64, msg string, err er
 	ret := make(map[string]interface{})
 	err = sendPost(`prepare/`+txname, form, &ret)
 	if err != nil {
+    fmt.Errorf("Error sending prepare", err)
 		return
 	}
 
 	form = &url.Values{}
 	if err = appendSign(ret, form); err != nil {
+    fmt.Errorf("Error signing", err)
 		return
 	}
 	requestID := ret["request_id"].(string)
@@ -275,6 +326,7 @@ func postTxResult(txname string, form *url.Values) (id int64, msg string, err er
 	id, err = waitTx(ret[`hash`].(string))
 	if id != 0 && err != nil {
 		msg = err.Error()
+    fmt.Errorf("Error waiting for Tx", msg)
 		err = nil
 	}
 	return

@@ -24,8 +24,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
 	"github.com/shopspring/decimal"
 
 	"github.com/stretchr/testify/assert"

@@ -2336,6 +2336,7 @@ VALUES ('2', 'DelApplication', 'contract DelApplication {
         warning "Value was not received"
       }
   
+      warning "Decoding JSON", $Value
       var full_nodes_arr array
       full_nodes_arr = JSONDecode($Value)
   

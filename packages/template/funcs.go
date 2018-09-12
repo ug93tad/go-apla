@@ -27,12 +27,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/language"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/language"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/smart"
 
 	"github.com/shopspring/decimal"
 	log "github.com/sirupsen/logrus"

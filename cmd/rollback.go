@@ -1,12 +1,12 @@
 package cmd
 
 import (
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/rollback"
-	"github.com/AplaProject/go-apla/packages/smart"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/rollback"
+	"github.com/ug93tad/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

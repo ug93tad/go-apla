@@ -26,13 +26,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/vmihailenco/msgpack.v2"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/script"
-	"github.com/AplaProject/go-apla/packages/service"
-	"github.com/AplaProject/go-apla/packages/smart"
-	"github.com/AplaProject/go-apla/packages/utils/tx"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/script"
+	"github.com/ug93tad/go-apla/packages/service"
+	"github.com/ug93tad/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/utils/tx"
 )
 
 func getPublicKey(signID int64, ecosystemID int64, pubkey []byte, w http.ResponseWriter, logger *log.Entry) ([]byte, error) {

@@ -5,10 +5,10 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/tcpserver"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/tcpserver"
+	"github.com/ug93tad/go-apla/packages/utils"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

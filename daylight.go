@@ -19,7 +19,7 @@ package main
 import (
 	"runtime"
 
-	"github.com/AplaProject/go-apla/cmd"
+	"github.com/ug93tad/go-apla/cmd"
 )
 
 func main() {

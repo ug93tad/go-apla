@@ -25,9 +25,9 @@ type LoginResult struct {
 	IsOwner     bool          `json:"isowner,omitempty"`
 	IsVDE       bool          `json:"vde,omitempty"`
 	Timestamp   string        `json:"timestamp,omitempty"`
-	Roles       []rolesResult `json:"roles,omitempty"`
+	Roles       []RolesResult `json:"roles,omitempty"`
 }
-type rolesResult struct {
+type RolesResult struct {
 	RoleId   int64  `json:"role_id"`
 	RoleName string `json:"role_name"`
 }
@@ -85,5 +85,14 @@ type TablesResult struct {
 type ListResult struct {
 	Count string              `json:"count"`
 	List  []map[string]string `json:"list"`
+}
+
+type RowResult struct {
+	Value map[string][]byte `json:"value"`
+}
+
+type CompletedTxsResults struct {
+  //Count int `json:"count"`
+	Transactions []map[string][]byte `json:"transactions"`
 }
 

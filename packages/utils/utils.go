@@ -35,12 +35,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
-	"github.com/AplaProject/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/model"
 	uuid "github.com/satori/go.uuid"
 
 	"github.com/pkg/errors"
@@ -69,11 +69,14 @@ func ParseBlockHeader(binaryBlock *bytes.Buffer, checkMaxSize bool) (BlockData, 
 	var block BlockData
 	var err error
 
+  fmt.Errorf("Start parsing header, checkMaxsize ", checkMaxSize)
 	if binaryBlock.Len() < 9 {
 		log.WithFields(log.Fields{"size": binaryBlock.Len(), "type": consts.SizeDoesNotMatch}).Error("binary block size is too small")
+    fmt.Println("Start parsing header, bad binary block length", checkMaxSize)
+
 		return BlockData{}, fmt.Errorf("bad binary block length")
 	}
-
+  fmt.Println("Start parsing header, parsing blockVersion", checkMaxSize)
 	blockVersion := int(converter.BinToDec(binaryBlock.Next(2)))
 
 	if checkMaxSize && int64(binaryBlock.Len()) > syspar.GetMaxBlockSize() {

@@ -9,7 +9,7 @@ import (
 
 	"context"
 
-	"github.com/AplaProject/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/model"
 )
 
 func createTables(t *testing.T, db *sql.DB) {

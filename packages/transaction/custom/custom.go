@@ -1,7 +1,7 @@
 package custom
 
 import (
-	"github.com/AplaProject/go-apla/packages/utils/tx"
+	"github.com/ug93tad/go-apla/packages/utils/tx"
 )
 
 // TransactionInterface is parsing transactions

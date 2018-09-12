@@ -21,8 +21,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/crypto"
 
 	"github.com/dgrijalva/jwt-go"
 	log "github.com/sirupsen/logrus"

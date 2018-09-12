@@ -18,16 +18,22 @@ package api
 
 import (
 	"net/http"
-
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/model"
+  //"bytes"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/model"
+  //"github.com/AplaProject/go-apla/packages/block"
 
 	log "github.com/sirupsen/logrus"
 )
 
 type rowResult struct {
 	Value map[string]string `json:"value"`
+}
+
+type completedTxsResult struct {
+  //Count int `json:"count"`
+  Transactions []map[string][]byte `json:"transactions"`
 }
 
 func row(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
@@ -43,5 +49,33 @@ func row(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entr
 	}
 
 	data.result = &rowResult{Value: row}
+	return
+}
+
+// get all rows with specific block_id
+func row2(w http.ResponseWriter, r *http.Request, data *apiData, logger *log.Entry) (err error) {
+	cols := `*`
+	if len(data.params[`columns`].(string)) > 0 {
+		cols = converter.EscapeName(data.params[`columns`].(string))
+	}
+	table := converter.EscapeName(data.params[`name`].(string))
+	row, err := model.GetAll(`SELECT `+cols+` FROM `+table+` WHERE block_id = ?`, 10000, data.params[`id`].(string))
+  //row, err := model.GetOneRow(`SELECT `+cols+` FROM `+table+` WHERE block_id = ?`, data.params[`id`].(string)).Bytes()
+
+	if err != nil {
+		logger.WithFields(log.Fields{"type": consts.DBError, "error": err, "table": data.params["name"].(string), "id": data.params["id"].(string)}).Error("getting rows")
+		return errorAPI(w, `E_QUERY`, http.StatusInternalServerError)
+	}
+
+  // turn row into []map[string][]byte
+  var res []map[string][]byte
+  for _, tx := range row {
+    m := make(map[string][]byte)
+    for k, v := range tx {
+      m[k] = []byte(v)
+    }
+    res = append(res,m)
+  }
+	data.result = &completedTxsResult{Transactions: res}
 	return
 }

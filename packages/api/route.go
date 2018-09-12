@@ -19,9 +19,9 @@ package api
 import (
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/utils/tx"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/utils/tx"
 
 	hr "github.com/julienschmidt/httprouter"
 	log "github.com/sirupsen/logrus"
@@ -56,6 +56,7 @@ func Route(route *hr.Router) {
 	get(`getuid`, ``, getUID)
 	get(`list/:name`, `?limit ?offset:int64,?columns:string`, authWallet, list)
 	get(`row/:name/:id`, `?columns:string`, authWallet, row)
+  get(`row2/:name/:id`, `?columns:string`, authWallet, row2)
 	get(`interface/page/:name`, ``, authWallet, getPageRow)
 	get(`interface/menu/:name`, ``, authWallet, getMenuRow)
 	get(`interface/block/:name`, ``, authWallet, getBlockInterfaceRow)

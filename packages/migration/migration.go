@@ -1,7 +1,7 @@
 package migration
 
 import (
-	"github.com/AplaProject/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/consts"
 
 	version "github.com/hashicorp/go-version"
 	log "github.com/sirupsen/logrus"

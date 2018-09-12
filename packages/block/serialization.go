@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/crypto"
-	"github.com/AplaProject/go-apla/packages/transaction"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/transaction"
+	"github.com/ug93tad/go-apla/packages/utils"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -62,6 +62,7 @@ func MarshallBlock(header *utils.BlockData, trData [][]byte, prevHash []byte, ke
 }
 
 func UnmarshallBlock(blockBuffer *bytes.Buffer, firstBlock bool) (*Block, error) {
+  fmt.Println("About to parse blockheader")
 	header, err := utils.ParseBlockHeader(blockBuffer, !firstBlock)
 	if err != nil {
 		return nil, err
@@ -69,6 +70,8 @@ func UnmarshallBlock(blockBuffer *bytes.Buffer, firstBlock bool) (*Block, error)
 
 	logger := log.WithFields(log.Fields{"block_id": header.BlockID, "block_time": header.Time, "block_wallet_id": header.KeyID,
 		"block_state_id": header.EcosystemID, "block_hash": header.Hash, "block_version": header.Version})
+  fmt.Printf("Unmarshalled block, block_id %v, block_hash %v, block_key_id %v\n", header.BlockID, header.Hash, header.KeyID)
+  fmt.Println("blockBuffer length ", blockBuffer.Len())
 	transactions := make([]*transaction.Transaction, 0)
 
 	var mrklSlice [][]byte
@@ -76,9 +79,10 @@ func UnmarshallBlock(blockBuffer *bytes.Buffer, firstBlock bool) (*Block, error)
 	// parse transactions
 	for blockBuffer.Len() > 0 {
 		transactionSize, err := converter.DecodeLengthBuf(blockBuffer)
+    fmt.Println("unmarshalling txs, err ", err)
 		if err != nil {
 			logger.WithFields(log.Fields{"type": consts.UnmarshallingError, "error": err}).Error("transaction size is 0")
-			return nil, fmt.Errorf("bad block format (%s)", err)
+      			return nil, fmt.Errorf("bad block format (%s)", err)
 		}
 		if blockBuffer.Len() < int(transactionSize) {
 			logger.WithFields(log.Fields{"size": blockBuffer.Len(), "match_size": int(transactionSize), "type": consts.SizeDoesNotMatch}).Error("transaction size does not matches encoded length")
@@ -90,6 +94,7 @@ func UnmarshallBlock(blockBuffer *bytes.Buffer, firstBlock bool) (*Block, error)
 			return nil, fmt.Errorf("transaction size is 0")
 		}
 
+    fmt.Println("Number of transactions: ", transactionSize)
 		bufTransaction := bytes.NewBuffer(blockBuffer.Next(int(transactionSize)))
 		t, err := transaction.UnmarshallTransaction(bufTransaction)
 		if err != nil {

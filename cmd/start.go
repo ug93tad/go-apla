@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/daylight"
+	"github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/daylight"
 	"github.com/spf13/cobra"
 )
 

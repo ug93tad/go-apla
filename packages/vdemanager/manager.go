@@ -9,10 +9,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf"
 
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/model"
 	pConf "github.com/rpoletaev/supervisord/config"
 	"github.com/rpoletaev/supervisord/process"
 	log "github.com/sirupsen/logrus"

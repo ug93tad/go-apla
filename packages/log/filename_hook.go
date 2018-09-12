@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AplaProject/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf"
 
 	"github.com/sirupsen/logrus"
 )

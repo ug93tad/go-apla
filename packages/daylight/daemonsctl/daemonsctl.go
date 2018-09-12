@@ -1,13 +1,13 @@
 package daemonsctl
 
 import (
-	"github.com/AplaProject/go-apla/packages/block"
-	conf "github.com/AplaProject/go-apla/packages/conf"
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/daemons"
-	"github.com/AplaProject/go-apla/packages/smart"
-	"github.com/AplaProject/go-apla/packages/tcpserver"
-	"github.com/AplaProject/go-apla/packages/utils"
+	"github.com/ug93tad/go-apla/packages/block"
+	conf "github.com/ug93tad/go-apla/packages/conf"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/daemons"
+	"github.com/ug93tad/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/tcpserver"
+	"github.com/ug93tad/go-apla/packages/utils"
 
 	log "github.com/sirupsen/logrus"
 )

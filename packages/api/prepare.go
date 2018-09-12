@@ -22,12 +22,12 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/AplaProject/go-apla/packages/conf/syspar"
-	"github.com/AplaProject/go-apla/packages/consts"
-	"github.com/AplaProject/go-apla/packages/converter"
-	"github.com/AplaProject/go-apla/packages/model"
-	"github.com/AplaProject/go-apla/packages/script"
-	"github.com/AplaProject/go-apla/packages/utils/tx"
+	"github.com/ug93tad/go-apla/packages/conf/syspar"
+	"github.com/ug93tad/go-apla/packages/consts"
+	"github.com/ug93tad/go-apla/packages/converter"
+	"github.com/ug93tad/go-apla/packages/model"
+	"github.com/ug93tad/go-apla/packages/script"
+	"github.com/ug93tad/go-apla/packages/utils/tx"
 
 	"github.com/shopspring/decimal"
 	log "github.com/sirupsen/logrus"
@@ -171,6 +171,7 @@ func (h *contractHandlers) prepareContract(w http.ResponseWriter, r *http.Reques
 		NetworkID:   consts.NETWORK_ID,
 	}
 
+  logger.Errorf("Preparing contract, KeyID = %v",data.keyId) 
 	forsign := []string{smartTx.ForSign()}
 	if info.Tx != nil {
 		f, err := forsignFormData(w, r, data, logger, req, *info.Tx)

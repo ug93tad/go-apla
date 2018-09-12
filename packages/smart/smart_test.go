@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/AplaProject/go-apla/packages/script"
+	"github.com/ug93tad/go-apla/packages/script"
 )
 
 type TestSmart struct {

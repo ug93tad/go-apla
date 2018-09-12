@@ -22,7 +22,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/AplaProject/go-apla/packages/crypto"
+	"github.com/ug93tad/go-apla/packages/crypto"
 )
 
 func TestGetUID(t *testing.T) {

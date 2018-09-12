@@ -19,7 +19,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/AplaProject/go-apla/packages/smart"
+	"github.com/ug93tad/go-apla/packages/smart"
 
 	log "github.com/sirupsen/logrus"
 )
